@@ -1,0 +1,21 @@
+div {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+p:first-of-type {
+    font-weight: bold;
+    color: #d9534f; /* Red color to indicate deletion */
+}
+
+p:last-of-type {
+    font-style: italic;
+    color: #5bc0de; /* Blue color for redirection message */
+}

@@ -1,0 +1,33 @@
+mat-toolbar {
+    background-color: #90caf9;
+    color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar button {
+    color: white;
+}
+
+mat-sidenav {
+    background-color: #bbdefb;
+    width: 250px;
+}
+
+mat-list-item {
+    color: white;
+}
+
+footer {
+    background-color: #90caf9;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

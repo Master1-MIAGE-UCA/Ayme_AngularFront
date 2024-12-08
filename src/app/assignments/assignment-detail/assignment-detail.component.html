@@ -1,0 +1,28 @@
+@if(assignmentTransmis) {
+    <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title> Nom du devoir: {{assignmentTransmis.nom}}</mat-card-title>
+          <mat-card-subtitle>
+            A rendre le : {{assignmentTransmis.dateDeRendu | date:'dd/MM/yyyy'}}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+              Ici description du devoir
+            </p>
+        </mat-card-content>
+        <mat-card-actions id="bottom">
+          @if(!assignmentTransmis.rendu) {
+            <mat-checkbox (click)="onAssignmentRendu()">Projet rendu</mat-checkbox>
+          }
+
+          <button mat-raised-button color="primary" (click)="onClickEdit()" [disabled]="!isAdmin()">
+            Edit
+          </button>
+
+          <button mat-raised-button color="warn" (click)="onDeleteAssignment()">
+            Delete
+          </button>
+        </mat-card-actions>
+      </mat-card>
+}

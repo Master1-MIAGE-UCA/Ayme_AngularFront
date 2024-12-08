@@ -1,0 +1,44 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="opened=!opened">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <a routerLink="/home">
+            <button mat-icon-button>
+                <mat-icon>home</mat-icon>
+                Gestion des devoirs
+            </button>
+        </a>
+
+        <span class="spacer"></span>
+        <a routerLink="/connexion">
+            <button mat-button>
+                <mat-icon>lock</mat-icon>
+                Connexion
+            </button>
+        </a>
+      </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="opened">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/home">Liste des devoirs</a>
+            <a mat-list-item routerLink="/add">Ajout d'un devoir</a>
+            <a mat-list-item routerLink="update">Modification d'un devoir</a>
+            <a mat-list-item routerLink="remove">Suppression d'un devoir</a>
+            <a mat-list-item routerLink="#" (click)="peuplerBD()">Génération de données de test</a>
+            <a mat-list-item routerLink="assignments/deleteAll">Clear de la bdd</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<footer>
+    <mat-icon>copyright</mat-icon>
+    <span> Créé par Aymé</span>
+</footer>

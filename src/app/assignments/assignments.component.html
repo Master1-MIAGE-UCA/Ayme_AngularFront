@@ -1,0 +1,33 @@
+<main class="container">  
+    <mat-toolbar>
+        <div id="totals">
+            <span>Nombre total de devoirs : {{totalDocs}}</span>
+        </div>
+        <div id="buttons">
+            <button mat-button (click)="pagePrecedente()" [disabled]="!hasPrevPage">Précédente</button>
+            <button mat-button (click)="pageSuivante()" [disabled]="!hasNextPage">Suivante</button>
+        </div>
+        <div id="pages">
+            <span>Page {{page}} sur {{totalPages}}</span>
+        </div>
+    </mat-toolbar>
+    <mat-list>
+        <mat-divider></mat-divider>
+        @for(a of assignments; track a.nom) {
+            <a [routerLink]="['/assignment',a.id]">
+                <div>
+                    <h3 mat-sub-header>{{a.dateDeRendu| date:'dd/MM/YYYY'}}</h3>
+                    @if(a.rendu) {
+                    <mat-list-item appRendu>
+                        Le devoir {{a.nom}} a été rendu.
+                    </mat-list-item>
+                    } @else {
+                    <mat-list-item appNonRendu>
+                        Le devoir {{a.nom}} EST ENCORE A RENDRE !!!
+                    </mat-list-item>
+                    }
+                </div>
+            </a>
+        }
+    </mat-list>
+</main>

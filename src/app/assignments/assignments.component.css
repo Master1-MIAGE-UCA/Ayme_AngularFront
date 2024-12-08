@@ -1,0 +1,52 @@
+table, td, tr {
+    border: 1px solid black;
+}
+
+.rendu {
+    background-color: lightgreen;
+    color: green;
+}
+
+.nonRendu {
+    background-color: lightcoral;
+    color: red;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.ajouterBtn {
+    align-self: flex-end;
+}
+
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 0 10px; /* Add some padding */
+}
+
+mat-toolbar .total-docs {
+    align-self: center;
+    font-size: 0.8em;
+}
+
+mat-toolbar .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+mat-toolbar .buttons button {
+    color: #007bff; /* Slightly blue text color */
+    margin: 0 10px; /* Add some margin */
+}
+
+mat-toolbar .pages-info {
+    align-self: center;
+    font-size: 0.8em;
+}
