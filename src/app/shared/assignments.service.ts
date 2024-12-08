@@ -36,17 +36,14 @@ export class AssignmentsService {
   }
 
   addAssignment(assignment: Assignment): Observable<any> {
-    this.LoggingService.log(assignment.nom, "ajouté");
     return this.http.post<Assignment>(this.backEND_URL, assignment);
   }
 
   updateAssignment(assignment: Assignment): Observable<any> {
-    this.LoggingService.log(assignment.nom, "modifié");
     return this.http.put<Assignment>(this.backEND_URL, assignment);
   }
 
   removeAssignment(assignment: Assignment): Observable<any> {
-    this.LoggingService.log(assignment.nom, "supprimé");
     return this.http.delete<Assignment>(this.backEND_URL + "/" + assignment.id);
   }
 
