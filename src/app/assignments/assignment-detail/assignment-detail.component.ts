@@ -19,7 +19,7 @@ import { AuthService } from '../../shared/auth.service';
   styleUrl: './assignment-detail.component.css'
 })
 export class AssignmentDetailComponent {
-  assignmentTransmis!: Assignment|undefined;
+  assignmentTransmis: Assignment|undefined;
 
   constructor(
     private assignmentsService: AssignmentsService,
@@ -54,7 +54,7 @@ export class AssignmentDetailComponent {
   }
 
   onDeleteAssignment() {
-    if (!this.assignmentTransmis) return;
+    if (this.assignmentTransmis == undefined) return;
     this.assignmentsService.removeAssignment(this.assignmentTransmis)
     .subscribe(message => {
       console.log(message);
@@ -63,7 +63,7 @@ export class AssignmentDetailComponent {
   }
 
   onClickEdit() {
-    if (!this.assignmentTransmis) return;
+    if (this.assignmentTransmis == undefined) return;
     this.router.navigate(['/assignment', this.assignmentTransmis.id, 'edit'],
     {queryParams: {nom: this.assignmentTransmis.nom}, fragment: 'edition'}
     );
